@@ -1,27 +1,31 @@
-<h2>Get request</h2>
-<table>
-<tr>
-  <th>id</th>
-  <th>name</th>
-</tr>
+
+<h2>Gallery</h2>
+
+
 <label >
-  name:
+  Name:
   <input type="text" (change)="onNameChanged($event)" />
 </label>
-<br/>
 <label >
-  image:
+  Description:
+  <input type="text" (change)="onDescriptionChanged($event)" />
+</label>
+<label >
+  Image:
   <input type="file" (change)="onImageChanged($event)" />
 </label>
-<br/>
 <button (click)="newBook()">Add New Image</button>
 
-
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+  </tr>
 <tr *ngFor="let image of images">
   <td>{{image.id}}</td>
   <td>{{image.name}}</td>
+  <td> <img src={{image.image}} alt="loading"> </td>
 </tr>
 <br/>
 </table>
-<img src="http://127.0.0.1:8000/media/WhatsApp_Image_2020-10-20_at_19.17.04.jpeg" alt="didnt work here">
 
