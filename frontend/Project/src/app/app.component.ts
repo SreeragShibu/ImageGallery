@@ -13,12 +13,10 @@ export class AppComponent {
   name : string;
   description : string;
   image: File;
-
-  // constructor( private _freeApiService: freeApiService){
-  // } 
   images : Image[];
 
   constructor( private http:HttpClient, private _freeApiService: freeApiService){}
+
   onNameChanged(event: any){
     this.name = event.target.value;
 

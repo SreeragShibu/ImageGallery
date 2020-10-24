@@ -1,31 +1,36 @@
+<div class="container-fluid" style="padding: 0;">
 
-<h2>Gallery</h2>
+  <div class="container-fluid" style="background-color: rgba(53, 12, 116, 0.15);">
+    <h1 >Gallery</h1>
+  </div>
+  <div class="container-fluid" style="background-color: rgba(108, 177, 68, 0.15);">
+    <label >
+      Name:
+      <input type="text" (change)="onNameChanged($event)" />
+    </label>
+    <label >
+      Description:
+      <input type="text" (change)="onDescriptionChanged($event)" />
+    </label>
+    <label >
+      Image:
+      <input type="file" (change)="onImageChanged($event)" />
+    </label>
+    <button (click)="newBook()" >Add New Image</button>
+  </div>
+  <!-- <div *ngFor="let image of images" >
+      <div  >{{image.image}}</div>
+  </div> -->
+  <div  >
+    <div *ngFor="let image of images" style="display: inline-block; width : 33.33%; padding: 10px">
+      <img src={{image.image}} alt="" style="width:100% ; height:auto;">
+      <h3>{{image.name}}</h3 >
+      <p>{{image.description}}</p>
+  </div>
+  </div>
+   
+</div>
 
 
-<label >
-  Name:
-  <input type="text" (change)="onNameChanged($event)" />
-</label>
-<label >
-  Description:
-  <input type="text" (change)="onDescriptionChanged($event)" />
-</label>
-<label >
-  Image:
-  <input type="file" (change)="onImageChanged($event)" />
-</label>
-<button (click)="newBook()">Add New Image</button>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>name</th>
-  </tr>
-<tr *ngFor="let image of images">
-  <td>{{image.id}}</td>
-  <td>{{image.name}}</td>
-  <td> <img src={{image.image}} alt="loading"> </td>
-</tr>
-<br/>
-</table>
 
