@@ -18,9 +18,6 @@
     </label>
     <button (click)="newBook()" >Add New Image</button>
   </div>
-  <!-- <div *ngFor="let image of images" >
-      <div  >{{image.image}}</div>
-  </div> -->
   <div  >
     <div *ngFor="let image of images" style="display: inline-block; width : 33.33%; padding: 10px">
       <img src={{image.image}} alt="" style="width:100% ; height:auto;">
