@@ -13,3 +13,9 @@ class ImagesList(generics.RetrieveAPIView):
         queryset = Images.objects.all()
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        image = request.data['image']
+        name  = request.data['name']
+        Images.objects.create(name=name, image=image)
+        return Response({"message":"created"}, status=status.HTTP_201_CREATED)
